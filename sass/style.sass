@@ -1,0 +1,250 @@
+@import 'normalize'
+@import 'reset'
+@import 'global'
+@import 'fonts'
+
+.header
+  height: 80px
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: 30px
+  color: #fff
+  background-color: $accent
+  margin-bottom: 75px
+  @media screen and ( max-width: 576px )
+    margin-bottom: 50px
+
+.footer
+  margin: auto 0 25px
+  @media screen and ( max-width: 576px )
+    display: none
+
+.questions
+  &__field
+    &:not(:last-child)
+      margin-bottom: 35px
+
+.question
+  &__title
+    margin-bottom: 15px
+    @media screen and ( max-width: 576px )
+      margin-bottom: 10px
+
+.stars
+  max-width: 530px
+  display: flex
+  justify-content: space-between
+  margin: 0 auto
+  counter-reset: index
+  &__input
+    display: none
+    &:checked + .stars__label
+      color: #fff
+      .stars__icon
+        path
+          fill: $red
+          stroke: $red
+  &__label
+    position: relative
+    display: block
+    transition: color .2s
+    &::after
+      counter-increment: index
+      content: counter(index)
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      font-weight: 500
+    &:hover
+      color: #fff
+      .stars__icon
+        path
+          fill: $red
+          stroke: $red
+  &__icon
+    width: 80px
+    height: 80px
+    @media screen and ( max-width: 576px )
+      width: 50px
+      height: 50px
+    path
+      fill: #f7fbff
+      stroke: #8ac3ec
+      transition: fill .2s, stroke .2s
+
+.switchers
+  display: flex
+  justify-content: center
+  &__item
+    &:not(:last-child)
+      margin-right: 40px
+      @media screen and ( max-width: 576px )
+        margin-right: 20px
+  &__input
+    display: none
+    &:checked + .switchers__btn
+      color: #fff
+      background-color: $accent
+      background-image: linear-gradient(180deg, #278ad3 0%, #1564c0 100%)
+  &__btn
+    display: inline-block
+    min-width: 80px
+    line-height: 40px
+    text-align: center
+    background-color: #fff
+    border-radius: 50px
+    padding: 0 20px
+    border: 1px solid $accent
+    transition: background .2s, color .2s
+    &:hover
+      color: #fff
+      background-color: $accent
+      background-image: linear-gradient(180deg, #278ad3 0%, #1564c0 100%)
+
+.links
+  display: flex
+  justify-content: space-between
+  font-size: 15px
+  &__item
+    color: #62778b
+    border-bottom: 1px solid #d1dbe4
+
+.popup
+  display: none
+  &--visible
+    display: block
+  &__body
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 100%
+    max-width: 770px
+    max-height: 100vh
+    background-color: $light
+    border-radius: 4px
+    padding: 45px
+    overflow-y: auto
+    @media screen and ( max-width: 576px )
+      padding: 45px 15px 15px
+  &__close
+    position: absolute
+    top: 15px
+    right: 15px
+    width: 15px
+    height: 15px
+    background: url(../img/close.svg) center / cover no-repeat
+
+.cards
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-auto-rows: 200px
+  grid-gap: 20px
+  @media screen and ( max-width: 768px )
+    grid-template-columns: 1fr
+    grid-auto-rows: auto
+  &__item
+    background-color: #fff
+    border-radius: 5px
+    padding: 30px
+    border-width: 2px
+    border-style: solid
+    border-color: #fff
+    transition: border-color .2s
+    cursor: pointer
+    @media screen and ( max-width: 576px )
+      padding: 15px
+    &:hover,
+    &--active
+      border-color: $accent
+  &__title
+    font-weight: 500
+    text-align: center
+    margin-bottom: 20px
+  &__icons
+    display: flex
+    justify-content: space-between
+    counter-reset: number
+    @media screen and ( max-width: 768px )
+      max-width: 300px
+      margin: 0 auto
+    &--likes
+      justify-content: center
+  &__icon
+    path
+      fill: #bcc7ce
+    &--star
+      width: 45px
+      height: 45px
+      background: url(../img/star.svg) center / cover no-repeat
+    &--heart
+      width: 37px
+      height: 34px
+      background: url(../img/heart.svg) center / cover no-repeat
+    &--emoji
+      width: calc(100% / 3)
+      height: 90px
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      background-position: top center
+      background-size: 40px 40px
+      background-repeat: no-repeat
+      span
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        height: 35px
+    &--bad
+      background-image: url(../img/bad.svg)
+      span
+        width: 90px
+        color: #fff
+        background-color: $red
+        border-radius: 50px
+    &--good
+      text-align: center
+      background-image: url(../img/good.svg)
+    &--great
+      text-align: right
+      background-image: url(../img/great.svg)
+    &--like,
+    &--dislike
+      width: 50px
+      height: 50px
+    &--like
+      background: url(../img/like.svg) center / cover no-repeat
+      margin-right: 15px
+    &--dislike
+      background: url(../img/dislike.svg) center / cover no-repeat
+    &--side
+      position: relative
+      width: 22px
+      height: 22px
+      color: #bcc7ce
+      border: 1px solid #bcc7ce
+      border-radius: 50%
+      &::after
+        counter-increment: number
+        content: counter(number)
+        font-size: 10px
+        line-height: 1.2
+        font-weight: 500
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+  &__sides
+    display: flex
+    justify-content: space-between
+    font-size: 10px
+    line-height: 1.2
+    margin-bottom: 5px
+    @media screen and ( max-width: 768px )
+      max-width: 300px
+      margin: 0 auto 5px
+    span
+      &:last-child
+        text-align: right

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>МобилКом</title>
+</head>
+<body>
+
+  <button class="open-popup" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Открыть попап</button>
+
+  <div class="popup overlay">
+    <div class="popup__body">
+      <button class="popup__close" aria-label="Закрыть попап"></button>
+      <ul class="popup__cards cards">
+        <li class="cards__item">
+          <p class="cards__title">Stars</p>
+          <ul class="cards__icons">
+            <li class="cards__icon cards__icon--star"></li>
+            <li class="cards__icon cards__icon--star"></li>
+            <li class="cards__icon cards__icon--star"></li>
+            <li class="cards__icon cards__icon--star"></li>
+            <li class="cards__icon cards__icon--star"></li>
+          </ul>
+        </li>
+        <li class="cards__item">
+          <p class="cards__title">Emoji</p>
+          <ul class="cards__icons">
+            <li class="cards__icon cards__icon--emoji cards__icon--bad">
+              <span>Плохо</span>
+            </li>
+            <li class="cards__icon cards__icon--emoji cards__icon--good">
+              <span>Хорошо</span>
+            </li>
+            <li class="cards__icon cards__icon--emoji cards__icon--great">
+              <span>Отлично</span>
+            </li>
+          </ul>
+        </li>
+        <li class="cards__item">
+          <p class="cards__title">Hearts</p>
+          <ul class="cards__icons">
+            <li class="cards__icon cards__icon--heart"></li>
+            <li class="cards__icon cards__icon--heart"></li>
+            <li class="cards__icon cards__icon--heart"></li>
+            <li class="cards__icon cards__icon--heart"></li>
+            <li class="cards__icon cards__icon--heart"></li>
+          </ul>
+        </li>
+        <li class="cards__item">
+          <p class="cards__title">Like & dislike</p>
+          <ul class="cards__icons cards__icons--likes">
+            <li class="cards__icon cards__icon--like"></li>
+            <li class="cards__icon cards__icon--dislike"></li>
+          </ul>
+        </li>
+        <li class="cards__item">
+          <p class="cards__title">NPS</p>
+          <p class="cards__sides">
+            <span>Точно не буду рекомендовать</span>
+            <span>Обязательно порекомендую</span>
+          </p>
+          <ul class="cards__icons">
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+            <li class="cards__icon cards__icon--side"></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
