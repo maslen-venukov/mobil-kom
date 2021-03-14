@@ -37,7 +37,11 @@ html
 
 .checkbox
   &-input
-    display: none
+    position: absolute
+    opacity: 0
+    &:focus + .checkbox-label
+      &::before
+        border-color: $accent
     &:checked + .checkbox-label
       &::before
         border-color: $accent
